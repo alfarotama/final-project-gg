@@ -1,4 +1,4 @@
-import { UserProfile, Track } from "./spotify";
+import { Track, UserProfile } from "./spotify";
 
 export interface PlaylistState {
 	tracks: Track[];
