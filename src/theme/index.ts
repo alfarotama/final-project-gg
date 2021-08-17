@@ -9,14 +9,8 @@ import { Input, Textarea } from "./form";
 
 const theme = extendTheme(
 	{
-		config: {
-			useSystemColorMode: true,
-		},
-		components: {
-			Input,
-			Textarea,
-			Button,
-		},
+		config: { useSystemColorMode: true },
+		components: { Button, Input, Textarea },
 		fonts: {
 			body: `'Poppins', ${defaultTheme.fonts.body}`,
 			heading: `'Poppins', ${defaultTheme.fonts.heading}`,
@@ -24,17 +18,11 @@ const theme = extendTheme(
 		colors: { brand, gray },
 		styles: {
 			global: ({ colorMode }) => ({
-				html: {
-					scrollBehavior: "smooth",
-				},
-				body: {
-					bg: colorMode === "light" ? "white" : "gray.900",
-				},
+				html: { scrollBehavior: "smooth" },
+				body: { bg: colorMode === "light" ? "white" : "gray.900" },
 			}),
 		},
-		radii: {
-			"4xl": "2rem",
-		},
+		radii: { "4xl": "2rem" },
 	},
 	withDefaultColorScheme({ colorScheme: "brand" })
 );
