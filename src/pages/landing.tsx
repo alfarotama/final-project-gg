@@ -12,7 +12,7 @@ import {
 // import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { FaSpotify } from "react-icons/fa";
 import { authorize } from "../libs/spotify";
-// import { useAuth } from "../libs/useAuth";
+import { useAuth } from "../libs/use-auth";
 
 const Landing = () => {
 	const { colorMode } = useColorMode();
