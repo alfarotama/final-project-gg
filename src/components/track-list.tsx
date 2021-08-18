@@ -45,7 +45,7 @@ const TrackList = () => {
 			))}
 		</MotionBox>
 	) : (
-		<Text>You can start by searching the song that you want</Text>
+		<Text>Type Something In Search Bar To Find Ur Music</Text>
 	);
 };
 
