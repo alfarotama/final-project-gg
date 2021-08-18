@@ -43,7 +43,7 @@ const Landing = () => {
 					</Box>
 				</Flex>
 				<Center>
-					<Image src={"https://picsum.photos/500"} />
+					<Image src="/ump.png" />
 				</Center>
 			</Grid>
 			<Center

@@ -23,7 +23,7 @@ const Header = () => {
 					href="/"
 					_hover={{ opacity: 0.8 }}
 				>
-					Ur Music Player
+					Ur Music Playlist
 				</Link>
 			</Center>
 			<Center minW={"100%"}>
