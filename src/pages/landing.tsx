@@ -9,7 +9,6 @@ import {
 	Button,
 	useColorMode,
 } from "@chakra-ui/react";
-// import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 import { FaSpotify } from "react-icons/fa";
 import { authorize } from "../libs/spotify";
 import { useAuth } from "../libs/use-auth";
