@@ -14,7 +14,7 @@ const Header = () => {
 			as={"header"}
 			templateColumns={"10vw 1fr 10vw"}
 			gap={"1rem"}
-			p={"1rem"}
+			p={"2rem"}
 		>
 			<Center>
 				<Link
@@ -23,7 +23,7 @@ const Header = () => {
 					href="/"
 					_hover={{ opacity: 0.8 }}
 				>
-					Ur Music Playlist
+					UMP
 				</Link>
 			</Center>
 			<Center minW={"100%"}>

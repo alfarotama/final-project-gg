@@ -1,3 +1,13 @@
+import { Box, Wrap, Text } from "@chakra-ui/layout";
+import {
+	Tag,
+	FormControl,
+	FormLabel,
+	Input,
+	Textarea,
+	Button,
+	useToast,
+} from "@chakra-ui/react";
 import {
 	Modal,
 	ModalOverlay,
@@ -6,19 +16,14 @@ import {
 	ModalFooter,
 	ModalBody,
 	ModalCloseButton,
-	FormControl,
-	FormLabel,
-	Input,
-	Textarea,
-	Button,
-	useToast,
-} from "@chakra-ui/react";
-import { useAppDispatch, useAppSelector } from "../store";
+} from "@chakra-ui/modal";
 import {
+	clearForm,
 	clearSelectedTracks,
 	setFormTitle,
 	setFormDescription,
 } from "../store/playlist";
+import { useAppDispatch, useAppSelector } from "../store";
 import { postPlaylist, postPlaylistTracks } from "../libs/spotify";
 import * as React from "react";
 
@@ -36,14 +41,33 @@ const CreatePlaylistModal = ({
 
 	const handleSubmit: React.FormEventHandler<HTMLButtonElement> = (e) => {
 		e.preventDefault();
+
+		const { title, description } = form;
+		const uris = selectedTracks.map((track) => track.uri);
+
+		if (title.length <= 10) {
+			return toast({
+				description: "Title at least should have 10 characters",
+				status: "error",
+			});
+		}
+
+		if (description.length <= 20) {
+			return toast({
+				description: "Description at least should have 20 characters",
+				status: "error",
+			});
+		}
+
 		postPlaylist(accessToken, user?.id as string, {
-			name: form.title,
-			description: form.description,
+			name: title,
+			description: description,
 			public: false,
 		})
 			.then(({ data }) => {
-				return postPlaylistTracks(accessToken, data.id as string, {
-					uris: selectedTracks,
+				dispatch(clearForm());
+				return postPlaylistTracks(accessToken, data.id, {
+					uris,
 				});
 			})
 			.then(() => {
@@ -53,14 +77,12 @@ const CreatePlaylistModal = ({
 					title: "Woohoo!",
 					description: "Playlist has been created successfully!",
 					status: "success",
-					duration: 9000,
-					isClosable: true,
 				});
 			});
 	};
 
 	return (
-		<Modal isOpen={isOpen} onClose={onClose}>
+		<Modal isOpen={isOpen} onClose={onClose} size={"xl"} isCentered>
 			<ModalOverlay />
 			<ModalContent as="form">
 				<ModalHeader>Create New Playlist</ModalHeader>
@@ -81,6 +103,7 @@ const CreatePlaylistModal = ({
 							onChange={(e) => dispatch(setFormDescription(e.target.value))}
 						/>
 					</FormControl>
+					<SelectedTracks />
 				</ModalBody>
 				<ModalFooter>
 					<Button colorScheme="brand" onClick={handleSubmit}>
@@ -91,5 +114,35 @@ const CreatePlaylistModal = ({
 		</Modal>
 	);
 };
+
+const SelectedTracks = () => {
+	const { selectedTracks } = useAppSelector((state) => state.playlist);
+
+	return (
+		<Box mt={2}>
+			<Text>{selectedTracks.length} tracks selected</Text>
+			<Wrap spacing={1}>
+				{selectedTracks.map((track) => {
+					const artists = track.artists.map((artist, index) => {
+						const isLast: boolean = index === track.artists.length - 1;
+						return artist.name + (isLast ? "" : ", ");
+					});
+					return (
+						<Tag key={track.uri}>
+							{track.name} by {artists}
+						</Tag>
+					);
+				})}
+			</Wrap>
+		</Box>
+	);
+};
+
+/* const getArtistsText = (array) => {
+  return array.map((item, index) => {
+    const isLast: boolean = index === array.length - 1
+    return artist.name + (isLast ? '' : ', ')
+  })
+} */
 
 export default CreatePlaylistModal;

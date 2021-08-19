@@ -27,7 +27,6 @@ const SearchBar = () => {
 				isClosable: true,
 			});
 		}
-		dispatch(setTracks([]));
 		setIsLoading(true);
 		getTracks(accessToken, {
 			q: query,
@@ -43,7 +42,7 @@ const SearchBar = () => {
 		<Flex as={"form"} onSubmit={handleSubmit} w={"100%"}>
 			<Input
 				type="text"
-				placeholder="Search..."
+				placeholder="Start by searching the songs..."
 				mr={2}
 				borderRadius="full"
 				isDisabled={!isAuthenticated}
