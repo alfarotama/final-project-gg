@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Final Project For Generasi Gigih
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My final project submission for [#GenerasiGIGIH](https://sites.google.com/anakbangsabisa.org/generasigigih-landingpage/home?authuser=1). This app consume Spotify API to create a playlist in our Spotify account.
 
-## Available Scripts
+## Screenshots
 
-In the project directory, you can run:
+<center><img src="/docs/images/landing-page.png" alt="Landing Page" /></center>
+<center><img src="/docs/images/create-playlist.png" alt="Create Playlist Page" /></center>
+<center><img src="/docs/images/new-releases.png" alt="New Releases Page" /></center>
 
-### `yarn start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🎇 The main feature is **create playlists**
+- 🌏 You also can have a new reference with **new releases** page
+- 🌑 When the night's come for protecting your eyes we have **dark mode**
+- 😁 And We still have a lot of surprises, so open us !!! 🙇🏻‍♂️
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Powered by
 
-### `yarn test`
+- [Create React App](https://create-react-app.dev/) to initialize the project with [TypeScript 💎](https://typescriptlang.org).
+- [React Redux](https://react-redux.js.org/) to manage the app state.
+- [Chakra-ui ⚡](https://chakra-ui.com/docs/getting-started) + [Framer/motion](https://www.framer.com/motion/) to build the user interface.
+- [Jest](https://jestjs.io/) & [react testing-library](https://testing-library.com/) to test the UI and implementation. 🧪
+- Hosted on [Vercel 🚀](https://vercel.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment Variables
 
-### `yarn build`
+- `REACT_APP_URL` contains the app Base URL e.g. `https://localhost:3000/`
+- `REACT_APP_SPOTIFY_CLIENT_ID` contains Spotify Client ID
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run on Local
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clone the project
+  ```bash
+    git clone https://github.com/alfarotama/final-project-gg.git
+  ```
+- Go to the project directory
+  ```bash
+    cd final-project-gg
+  ```
+- Install dependencies
+  ```bash
+    yarn
+  ```
+- Set up the [environment variables](#environment-variables)
+- Start the server
+  ```bash
+    yarn start
+  ```
+- Open http://localhost:3000 with your browser to see the result.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Feedback
 
-### `yarn eject`
+If you have any feedback, you can create issue(s) [here](https://github.com/alfarotama/final-project-gg/issues)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Etc
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please tell me if you want to login, send me your username and email for your spotify account, because these website still under development so you can't just login. 0/50 . you can send it to my feedback ⬆
