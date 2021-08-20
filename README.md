@@ -10,9 +10,9 @@ My final project submission for [#GenerasiGIGIH](https://sites.google.com/anakba
 
 ## Features
 
-- 🎇 The main feature is **create playlists**
-- 🌏 You also can have a new reference with **new releases** page
-- 🌑 When the night's come for protecting your eyes we have **dark mode**
+- 🎇 The main feature is to **create playlists**
+- 🌏 You also can have a new reference with the **new releases** page
+- 🌑 When the night's come for protecting your eyes we have a **dark mode**
 - 😁 And We still have a lot of surprises, so open us !!! 🙇🏻‍♂️
 
 ## Powered by
